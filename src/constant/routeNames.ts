@@ -10,4 +10,6 @@ export enum RouteName {
   marketplaceWithUrl = "/marketplace-with-url",
   multipleCurrencyMarketplace = "/multi-currency-marketplace",
   multipleCurrencySell = "/multi-currency-sell",
+  magicEden = "https://magiceden.io/marketplace/gatsbyclub/",
+  raydium = "https://raydium.io/swap/?inputCurrency=sol&outputCurrency=99Q3AfFWX3rdidoQCnAPPoZFjsaXr2AAk65RUgxiwfUi&inputAmount=0&outputAmount=0&fixed=in",
 }

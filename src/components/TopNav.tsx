@@ -21,6 +21,11 @@ const ROUTES = [
   { url: RouteName.activityView, name: "Activity" },
 ];
 
+const EXTERNALROUTES = [
+  { url: RouteName.magicEden, name: "Buy a Golden Pass" },
+  { url: RouteName.raydium, name: "Trade $GCC" },
+];
+
 const OTHER_LAYOUT_ROUTES = [
   { url: RouteName.customToken, name: "Custom Token Marketplace" },
   { url: RouteName.multipleCollection, name: "Multi Collection Marketplace" },
@@ -69,15 +74,20 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
   return (
     <HeaderBar>
       <Logo>
-        <Link to={RouteName.home}>
+        <a href="https://www.gatsbyclub.net/" target="_blank">
           <img alt="" src="/logo.png" />
-        </Link>
+        </a>
       </Logo>
       <Menu>
         {ROUTES.map((item) => (
           <li key={item.url} className={pathname === item.url ? "active" : ""}>
             <Link to={item.url}>{item.name}</Link>
           </li>
+        ))}
+        {EXTERNALROUTES.map((item) => (
+            <li key={item.url} className={pathname === item.url ? "active" : ""}>
+              <a href={item.url} target="_blank">{item.name}</a>
+            </li>
         ))}
       </Menu>
       {showCurrencyToggle && <CurrencyToggle />}
