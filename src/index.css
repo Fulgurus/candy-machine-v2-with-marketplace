@@ -1,10 +1,10 @@
 /* Customize your main colors in :root variables */
 :root {
-  --main-background-color: #343a50;
+  --main-background-color: #122c45;
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #f7f6f4;
-  --title-text-color: #3cba8b;
+  --title-text-color: #fdc500;
 }
 
 body {
@@ -13,12 +13,10 @@ body {
   background-size: cover; */
 
   margin: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
-  font-size:  16px;
-  line-height: 1.6;
+  font-family: 'Economica', sans-serif;
+  font-size: 20px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #303030;
   color: #FFFFFF;
 }
 
@@ -47,4 +45,33 @@ h3 {
 
 .css-1ago99h {
   color: black;
+}
+
+h1, .candy-stat-component-title, .candy-label{
+  color: var(--title-text-color);
+}
+
+.candy-modal .candy-label {
+  color: #757575;
+}
+
+.candy-powered-by, .candy-powered-by-buy{
+  display: none;
+}
+
+.candy-card, .candy-order{
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  border: inherit;
+  transition: all .3s ease-in-out;
+}
+
+.candy-card:hover, .candy-order:hover {
+  transform: translateY(-10px);
+  -webkit-filter: grayscale(0);
+  -moz-filter: grayscale(0);
+  transition: all .3s ease;
+}
+
+.candy-container-list{
+  margin: 30px;
 }

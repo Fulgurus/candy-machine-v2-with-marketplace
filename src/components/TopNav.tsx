@@ -17,8 +17,8 @@ interface TopNavProps {
 
 const ROUTES = [
   { url: RouteName.home, name: "Marketplace" },
-  { url: RouteName.sell, name: "Sell" },
   { url: RouteName.auctionsView, name: "Auctions" },
+  { url: RouteName.activityView, name: "Activity" },
 ];
 
 const OTHER_LAYOUT_ROUTES = [
@@ -30,7 +30,7 @@ const OTHER_LAYOUT_ROUTES = [
     name: "Multi Currency Marketplace",
   },
   { url: RouteName.multipleCurrencySell, name: "Multi Currency Sell" },
-  { url: RouteName.activityView, name: "Marketplace Activity" },
+
 ];
 
 const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
@@ -79,41 +79,6 @@ const TopNav: React.FC<TopNavProps> = ({ showCurrencyToggle = false }) => {
             <Link to={item.url}>{item.name}</Link>
           </li>
         ))}
-        <DropdownAnchor
-          ref={anchorRef}
-          onClick={handleToggle}
-          className={
-            OTHER_LAYOUT_ROUTES.some((item) => item.url === pathname)
-              ? "active"
-              : ""
-          }
-        >
-          Other Layouts
-          <Popper
-            open={open}
-            anchorEl={anchorRef.current}
-            role={undefined}
-            transition
-            disablePortal
-          >
-            <Paper>
-              <ClickAwayListener onClickAway={handleClose}>
-                <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                  {OTHER_LAYOUT_ROUTES.map((item) => (
-                    <MenuItem
-                      className={
-                        item.url === pathname ? "active active-submenu" : ""
-                      }
-                      key={item.url}
-                    >
-                      <Link to={item.url}>{item.name}</Link>
-                    </MenuItem>
-                  ))}
-                </MenuList>
-              </ClickAwayListener>
-            </Paper>
-          </Popper>
-        </DropdownAnchor>
       </Menu>
       {showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
@@ -143,7 +108,7 @@ const DropdownAnchor = styled.li`
   &:hover,
   &:active {
     color: rgb(131, 146, 161);
-    border-bottom: 4px solid var(--title-text-color);
+    border-bottom: 2px solid var(--title-text-color);
   }
 
   > div {
@@ -193,7 +158,7 @@ const Menu = styled.ul`
   margin-bottom: 0;
 
   > .active {
-    border-bottom: 4px solid var(--title-text-color);
+    border-bottom: 2px solid var(--title-text-color);
   }
 
   > .active-submenu {
@@ -202,7 +167,7 @@ const Menu = styled.ul`
 
   > li {
     margin: 0 12px;
-    padding: 5px;
+    padding: 8px;
 
     a {
       color: var(--main-text-color);
@@ -222,7 +187,7 @@ const Menu = styled.ul`
 
     &:hover,
     &:active {
-      border-bottom: 4px solid var(--title-text-color);
+      border-bottom: 2px solid var(--title-text-color);
     }
 
     &:hover > a {
