@@ -56,7 +56,7 @@ h1, .candy-stat-component-title, .candy-label{
 }
 
 .candy-powered-by, .candy-powered-by-buy{
-  display: none;
+  display: none !important;
 }
 
 .candy-card, .candy-order{
@@ -74,4 +74,8 @@ h1, .candy-stat-component-title, .candy-label{
 
 .candy-container-list{
   margin: 30px;
+}
+
+.candy-stat-component-description{
+  font-size: inherit;
 }

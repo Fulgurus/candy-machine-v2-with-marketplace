@@ -21,7 +21,6 @@ const Marketplace: React.FC = () => {
         wallet={wallet}
         candyShop={candyShop}
         walletConnectComponent={<WalletMultiButton />}
-        search
       />
     </DesContainer>
   );
